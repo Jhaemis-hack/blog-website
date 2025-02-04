@@ -1,0 +1,37 @@
+# Dependency folders
+/node_modules/
+
+# Environment variable files
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build artifacts
+/dist/
+.build/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Coverage reports
+coverage/
+
+# Temporary debug and crash logs
+*.tgz
+*.stackdump
+
+# Optional lock files (uncomment if needed)
+/package-lock.json
+/yarn.lock

@@ -1,0 +1,12 @@
+<div style="padding-bottom: 300px;" class="content">
+    <div class="content">
+        <% if (user == null) { %>
+        <h1>Welcome to Our Home page</h1>
+        <h1><a href="/signup">Register here</a> to access your profile page</h1>
+        <% }else{ %>
+            <h2>Hello <%= user.firstName %>,</h2>
+            <h3>Welcome to your Profile page</h3>
+        <% } %>
+    </div>
+</div>
+

@@ -1,0 +1,31 @@
+<div class="form login">
+    <% if (msg_blog_create) { %>
+     <p><%= msg_blog_create %></p>
+    <% } %>
+    <p class="form-heading">Create Blog</p>
+    <form action="" method="post" enctype="multipart/form-data">
+        <label for="category">Category</label>
+        <input name="category" id="category" type="text">
+        <label for="headline">Headline</label>
+        <input name="headline" id="headline" type="text">
+        <label for="author">Author</label>
+        <input name="author" id="author" type="text">
+        <label for="picTaker">Photographer</label>
+        <input name="picTaker" id="picTaker" type="text">
+        <label for="story">story</label>
+        <textarea name="story" id="story" placeholder="Write your story here"></textarea> 
+        <label for="photos">Image 1/headline image</label>
+        <input name="photos" id="photos" type="file">
+        <label for="photos">Image 2</label>
+        <input name="photos" id="photos" type="file">
+        <label for="photos">Image 3</label>
+        <input name="photos" id="photos" type="file">
+        <label for="photos">Image 4</label>
+        <input name="photos" id="photos" type="file">
+        <label for="photos">Image 5</label>
+        <input name="photos" id="photos" type="file">
+        <button type="submit">Post Blog</button>
+    </form>
+</div>
+        
+    

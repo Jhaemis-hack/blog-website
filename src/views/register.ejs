@@ -1,0 +1,22 @@
+<div class="form signup">
+    <% if (message !== undefined) { %>
+        <p style="color: rgb(255, 0, 0); font-size: large; text-align: center;"><%= message %></p>
+       <% } %>
+    <p class="form-heading">Register form</p>
+    <form action="" method="post">
+        <label for="firstName">firstName</label>
+        <input name="firstName" id="firstName" type="text">
+        <label for="lastName">lastName</label>
+        <input name="lastName" id="lastName" type="text">
+        <label for="email">Email</label>
+        <input name="email" id="email" type="email">
+        <label for="password">password</label>
+        <input type="password" name="password" id="password">
+        <button type="submit">register</button>
+    </form><hr>
+    <div class="redirect">
+        <a class="redirect-1" href="/google/login">Register with Google</a> || <a class="redirect-2" href="/login">Click here to Log In</a>
+    </div> 
+</div>
+        
+    
