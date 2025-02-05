@@ -3,8 +3,24 @@
     <nav class="nav-bar">
         <ul>
             <% if (user) { %>
-                <li><a href="/logout">Log Out</a></li>
-                <li><a href="/view/blogs">Blog Posts(⭐)</a></li>
+                <li class="logout"><a href="/logout">Log Out</a></li>
+                <li class="dropdown"><a href="">▼</a>
+                    <ul>
+                        <li class="collections"><a href="/view/blogs">Blog Posts(⭐)</a>
+                            <ul style="display: block;">
+                                <li><a href="/view/blogs?category=entertainment">Entertainment</a></li>
+                                <li><a href="/view/blogs?category=travel">Travel</a></li>
+                                <li><a href="/view/blogs?category=finance">Finance</a></li>
+                                <li><a href="/view/blogs?category=lifestyle">Lifestyle</a></li>
+                                <li><a href="/view/blogs?category=refreshment">Refreshment</a></li>
+                                <li><a href="/view/blogs?category=science">Science</a></li>
+                                <li><a href="/view/blogs?category=environment">Environment</a></li>
+                                <li><a href="/view/blogs?category=personalfinance">PersonalFinance</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                   
+                </li>
                 <% if (user.role === 'admin') { %>
                     <li><a href="/create/blog">create Blog</a></li>
                 <% } %>
@@ -12,6 +28,7 @@
                 <li><a href="/login">Log In</a></li>
                 <li><a href="/signup">Sign Up</a></li>
                 <li><a href="/google/login">Google+</a></li>
+                <li><a href="/github/login">Github+</a></li>
             <% } %>
         </ul>
     </nav>

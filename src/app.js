@@ -43,15 +43,18 @@ app.use(passport.session());
 
 app.use(async (req, res, next) => {
     const userId = req.session.userId
+    
 
     if(userId !== undefined){
         req.user = await User.findOne({_id: userId})
+        req.local.isAuth = req.isAuthenticated();
     }
 
     if(req.user === undefined) {
         res.locals.user = null
     }else{
         res.locals.user = req.user;
+        req.local.isAuth = req.isAuthenticated();
     }
     next();
 })

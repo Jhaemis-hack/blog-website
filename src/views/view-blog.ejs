@@ -1,37 +1,27 @@
 <div style="padding-bottom: 300px;" class="content">
-    <div class="header">
-        <nav>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Entertainmnet</a></li>
-                <li><a href="">Travel</a></li>
-                <li><a href="">Finance</a></li>
-                <li><a href="">Lifestyle</a></li>
-                <li><a href="">Refreshment</a></li>
-                <li><a href="">Science</a></li>
-                <li><a href="">Environment</a></li>
-                <li><a href="">PersonalFinance</a></li>
-            </ul>
-        </nav>
-    </div>
     <div class="content message">
         <% if (msg_blog_create) { %>
         <h2><%= msg_blog_create %></h2>
         <% } %>
     </div>
+    <h4 class="category"><%= category %></h2>
     <div class="content main">
-        <% starred.forEach(starredBlog => { %>
-            <img src="<%= starredBlog.headlineImageUrl %>" alt="headline Image">
-            <h4><%= starredBlog.picTaker %></h4>
-            <h4 class="category"><%= starredBlog.category %></h2>
-            <h2><%= starredBlog.headline %></h2>
-            <span><li><%= starredBlog.author %></li> &nbsp; <li><%= starredBlog.updatedAt %></li></span>
-            <h2><%= starredBlog.story %></h2>
+        <% post.forEach(Blog => { %>
+            <img src="<%= Blog.headlineImageUrl %>" alt="headline Image">
+            <h4 id="photograph">photo taken: <%= Blog.picTaker %></h4>
+            
+            <h2><%= Blog.headline %></h2>
+            <span><li><%= Blog.author %></li> &nbsp; <li><%= Blog.updatedAt %></li></span>
+            <h2><%= Blog.story %></h2>
             <h4>Other Images:</h4>
-            <img src="" alt="">
+            <img class="image-support" src="<%= Blog.imageId.imageUrl[0] %>" alt="">
+            <img class="image-support" src="<%= Blog.imageId.imageUrl[1] %>" alt="">
+            <img class="image-support" src="<%= Blog.imageId.imageUrl[2] %>" alt="">
+            <img class="image-support" src="<%= Blog.imageId.imageUrl[3] %>" alt="">
+            <img class="image-support" src="<%= Blog.imageId.imageUrl[4] %>" alt="">
             <% if (user) { %>
                <% if (user.role === 'admin') { %>
-                    <a href="/blog/<%= starredBlog._id %>/delete"><button>Delete Post</button></a>
+                    <a href="/blog/<%= Blog._id %>/delete"><button>Delete Post</button></a>
                <% } %>
             <% } %>
         <% }) %>

@@ -51,15 +51,30 @@ const getLogin = (req, res) => {
 
 const viewAllBlog =async (req, res) => {
     try {
-        const starred = await blogSchema.find({starred: true})
-        let message = '';
+        let category = req.query.category
+
+        if(!category){
+            const starred = await blogSchema.find({starred: true})
+            category = 'starred Blogs'
+            let message = '';
+            
+            if(starred == [] || starred.length < 1){
+                category = ''
+                message = "No starred blog yet, view collections"
+                return res.render('view-blog', { post: starred, category: category, msg_blog_create: message})
+            }
+
+            return res.render('view-blog', { post: starred, category: category, msg_blog_create: message })
+        }
         
-        if(starred == [] || starred.length < 1){
-            message = "No starred blog yet, view collections"
-            return res.render('view-blog', { starred, msg_blog_create: message})
+        const blogCategory = await blogSchema.find({category: category}).populate("imageId")
+        let message = '';
+        if(blogCategory == [] || blogCategory.length < 1){
+            message = `No ${category} blog yet, view collections`
+            return res.render('view-blog', { post: blogCategory, category: category, msg_blog_create: message})
         }
 
-        res.render('view-blog', { starred: starred, msg_blog_create: message })
+        res.render('view-blog', { post: blogCategory, category: category, msg_blog_create: message })
     } catch (error) {
         console.error(error.message);
         let message = "Error loading starred blogs"

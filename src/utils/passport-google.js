@@ -4,8 +4,8 @@ const User = require('../server/model/userSchema');
 const jwt = require('jsonwebtoken')
 
 passport.use(new GoogleStrategy({
-    clientID: process.env.client_ID,
-    clientSecret: process.env.client_Secret, 
+    clientID: process.env.google_client_ID,
+    clientSecret: process.env.google_client_Secret, 
     callbackURL: '/google/auth20/login',
     scope: [ 'profile', 'email' ],
     state: true

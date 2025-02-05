@@ -12,15 +12,20 @@ h1{
     text-align: center;
 }
 
+p{
+    font-size: 20px;
+    line-height: 1.5;
+}
+
 div.header{
     background-color: beige;
     color: rgb(27, 18, 18);
-    width: 100%;
+    width: 105%;
     text-align: center;
     position: relative;
     height: 200px;
-   
 }
+
 
 div.header h2{
     margin: 0px;
@@ -34,11 +39,6 @@ div.footer {
     position: absolute;
     margin-top: 0px;
     width: 100%;
-}
-
-p{
-    font-size: 20px;
-    line-height: 1.5;
 }
 
 div .form-heading{
@@ -70,15 +70,27 @@ div.form input {
     font-size: 1em;
 }
 
-textarea {
-    font-size: 1em;
-    width: 500px;
-    height: 100px;
+div .redirect{
+    margin-top: 0px;
+    justify-items: center;
+    margin-left: 280px;
+    
+}
+
+div a h2.title {
+    color: black;
+    margin: 0px;
+    padding: 0px;
+    display: inline;
+}
+
+div a[href] h2.title:hover {
+    background-color: beige;
+    color:black
 }
 
 div label {
     margin: 5px 0;
-    
 }
 
 div.form form button{
@@ -99,6 +111,35 @@ div nav ul{
     color:rgb(241, 189, 44);
     justify-content: center;
 }
+ 
+.content .content.main{
+    padding: 60px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(241, 241, 241);
+    margin-top: 50px;
+    width: 55%;
+    margin: 40px auto;
+}
+
+.content img{
+    height:400px;
+    width: 100%;
+} 
+
+.content .image-support{
+    width: 200px;
+    height:200px;
+}
+
+
+
+textarea {
+    font-size: 1em;
+    width: 500px;
+    height: 100px;
+}
 
 a{
     text-decoration: none;
@@ -112,21 +153,51 @@ a:hover{
     color: rgb(0, 0, 0);
 }
 
-div .redirect{
-    margin-top: 0px;
-    justify-items: center;
-    margin-left: 580px;
-    
+.header .nav-bar .logout {
+    margin-right: 40px;
 }
 
-div a h2.title {
-    color: black;
+.header .nav-bar .dropdown .collections li,
+.header .nav-bar .dropdown .collections  {
+    display: none; /* Initially hide the dropdown */
+    position: absolute;
+    top: 74%; /* Position it below the dropdown button */
+    left: 52%;
     margin: 0px;
     padding: 0px;
-    display: inline;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
 }
 
-div a[href] h2.title:hover {
-    background-color: beige;
-    color:black
+.header .nav-bar .dropdown:hover li {
+    display: block;
+    font-size: 25px;
+    width: 230px;
+    height: 40px;
+    opacity: 1;
+    visibility: visible;
 }
+
+.header .nav-bar .dropdown .collections:hover ul li{
+    display: block;
+    position: relative;
+    font-size: 25px;
+    width: 300px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-bar .collections ul a:hover,
+.nav-bar .dropdown a:hover,
+.nav-bar .collections ul li:hover > a {
+    color: #f1d088;
+}
+
+.header .nav-bar .dropdown:hover .collections li {
+    visibility: hidden;
+}
+
+
